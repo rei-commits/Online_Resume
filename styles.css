@@ -1,20 +1,12 @@
-* {
-    margin: 20px;
-    padding: 0;
-    box-sizing: border-box;
-
-}
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #222;
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
     color: #fff;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+
 /* Section 1 Styles */
 .section-1 {
     display: flex;
@@ -22,79 +14,165 @@ body {
     padding: 20px;
     border: 2px solid cyan;
     margin-bottom: 20px;
+    max-width: 900px;
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .top-row {
     display: flex;
     justify-content: space-between;
-    margin: auto 0;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px; /* Adds space between the top row and Box 3 */
 }
+
 .box {
     padding: 20px;
     margin: 0 10px;
-}
-.box-1 img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 10px;
-}
-.box-1 h2, .box-1 p {
-    margin: 5px 0;
+    border: 2px solid cyan;
+    box-sizing: border-box;
 }
 
-.box-1 p{
-    color: cadetblue;
+/* Style for Box 1 */
+.box-1 {
+    flex: 1; /* Allow Box 1 to take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content horizontally */
+    text-align: center; /* Centers text */
+}
+
+.box-1 img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Style for Box 2 */
+.box-2 {
+    flex: 1; /* Allow Box 2 to take up equal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly space out items */
+    max-width: 50%; /* Adjust width of Box 2 */
 }
 
 .box-2 ul {
     list-style-type: none;
-
+    padding: 0;
 }
-.box-3 p {
-    font-size: 14px;
-    flex: 1;
+
+/* Style for Box 3 */
+.box-3 {
+    margin-top: 20px;
     padding: 10px;
-    justify-content: flex-end;
+    background-color: #333;
+    border: 2px solid cyan;
+    text-align: center;
+    width: 100%; /* Make sure Box 3 spans the full width below */
 
 }
-/* Sections 2 and 3 Container */
-.sections-2-3 {
-    display: flex;
-    justify-content: space-between;
-}
+
+
 /* Section 2 Styles */
 .section-2 {
-    flex: 3;
-    padding: 20px;
-    background-color: #333;
+    display: flex;
+    justify-content: space-between;
     border: 2px solid orange;
-    margin-right: 10px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
+
+.section-2 .left-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.section-2 .right-column {
+    flex: 1;
+    border: 2px solid yellow;
+}
+
+/* Employment & Education */
 .employment, .education {
     margin-bottom: 20px;
 }
-h4 {
-    margin-bottom: 5px;
+
+.employment h3, .education h3 {
+    color: #fff;
+}
+
+.employment p, .education p {
+    color: #bbb;
+}
+
+.section-3 h3 {
+    display: flex;
+    align-self: baseline;
+    margin: 0;
+    width: 2px;
+    height: 2px;
 }
 /* Section 3 Styles */
 .section-3 {
-    flex: 1;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
-    background-color: #333;
+    border: 2px solid yellow;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.date {
+    display: flex;
+    align-self: baseline;
+    flex-direction: row-reverse;
+}
+
+/* Programming Skills */
+.programming-skills, .graphic-skills, .language-skills {
+    padding: 10px;
     border: 2px solid yellow;
 }
+
+.programming-skills ul, .graphic-skills ul, .language-skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.programming-skills li, .graphic-skills li, .language-skills li {
+    margin-bottom: 20px;
+}
+
+.programming-skills span, .graphic-skills span, .language-skills span {
+    color: cyan;
+}
+
+/* Bullet Points */
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding: 0;
 }
-ul li {
-    margin-bottom: 10px;
-}
-/* Programming Skills Bar */
-.section-3 ul li::before {
-    content: "•";
-    margin-right: 10px;
+
+ul li::before {
+    content: '•';
     color: cyan;
+    margin-right: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .top-row, .section-2, .section-3 {
+        flex-direction: column;
+    }
+
+    .box {
+        margin-bottom: 10px;
+    }
+
+    .right-column, .left-column {
+        margin: 0;
+    }
 }
